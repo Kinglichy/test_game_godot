@@ -1,12 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://nthymkbp2tsh"]
+[gd_scene load_steps=5 format=3 uid="uid://nthymkbp2tsh"]
 
 [ext_resource type="Texture2D" uid="uid://xpio24v282li" path="res://rogue_test.png" id="1_qxrlw"]
 [ext_resource type="Script" uid="uid://dmi8n3h2akrsb" path="res://character_body_2d.gd" id="2_wrm1d"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxrlw"]
+radius = 8.246211
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wrm1d"]
+a = Vector2(-155, 10.000015)
+
 [node name="Game" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_wrm1d")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+rotation = -1.5707964
 texture = ExtResource("1_qxrlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_qxrlw")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -60)
+rotation = 3.1415927
+shape = SubResource("SegmentShape2D_wrm1d")
