@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4msjfhc7n68a"]
+
+[ext_resource type="Script" uid="uid://dmi8n3h2akrsb" path="res://character_body_2d.gd" id="1_ktt4y"]
+[ext_resource type="Texture2D" uid="uid://xpio24v282li" path="res://rogue_test.png" id="2_wbnp3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph5yk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wbnp3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_ktt4y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(450, 174)
+sprite_frames = SubResource("SpriteFrames_ph5yk")

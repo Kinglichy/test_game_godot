@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://nthymkbp2tsh"]
+
+[ext_resource type="Texture2D" uid="uid://xpio24v282li" path="res://rogue_test.png" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://dmi8n3h2akrsb" path="res://character_body_2d.gd" id="2_wrm1d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_wrm1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_qxrlw")
